@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-offset-4 col-xs-4">
+
+<h1><%= @post.title %></h1>
+
+<p>Author: <%= @post.author %></p>
+
+<% if @tags.length > 0 %>
+<p>Tags:
+<% @tags.each do |tag| %>
+<a href="/tags/<%=tag.id%>"><%=tag.name%></a>
+<% end %>
+</p>
+<% end %>
+
+<p><%= @post.description %></p>
+
+<%= button_to "Update", edit_post_path(@post), method: :get %>
+<%= button_to "Delete", @post, method: :delete %>
+
+		</div>
+	</div>
+</div>
